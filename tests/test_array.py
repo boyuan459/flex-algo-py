@@ -1,4 +1,4 @@
-from flex_algo import array
+from flex_algo import array_utils as array
 
 
 def test_two_sum():
