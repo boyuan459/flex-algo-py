@@ -50,6 +50,29 @@ def backspace_compare(s, t):
     return True
 
 
+def is_sub_palindrome(s_str, start, end) -> bool:
+    while start < end:
+        if s_str[start] != s_str[end]:
+            return False
+
+        start += 1
+        end -= 1
+
+    return True
+
+
+def is_palindrome(s_str) -> bool:
+    start, end = 0, len(s_str) - 1
+
+    while start < end:
+        if s_str[start] != s_str[end]:
+            return is_sub_palindrome(s_str, start + 1, end) or is_sub_palindrome(s_str, start, end - 1)
+        start += 1
+        end -= 1
+
+    return True
+
+
 if __name__ == '__main__':
     ss = "abcabcbb"
     longest = length_of_longest_substring(ss)
@@ -61,8 +84,13 @@ if __name__ == '__main__':
 
     s2, t2 = "ab##", "c#d#"
     equal2 = backspace_compare(s2, t2)
-    print(equal2)
+    print('"ab##", "c#d#" is the same string: {same}'.format(same=equal2))
 
     s3, t3 = "a#c", "b"
     equal3 = backspace_compare(s3, t3)
-    print(equal3)
+    print('"a#c", "b" is the same string: {0}'.format(equal3))
+
+    s_pal = "aba"
+    valid_pal = is_palindrome(s_pal)
+    print(f'is valid palindrome: {valid_pal}')
+
