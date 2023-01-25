@@ -1,4 +1,4 @@
-class Queue:
+class StacksQueue:
     def __init__(self):
         self.in_stack = []
         self.out_stack = []
@@ -28,7 +28,7 @@ class Queue:
 
 
 if __name__ == '__main__':
-    queue = Queue()
+    queue = StacksQueue()
     queue.push(1)
     queue.push(2)
     queue.push(3)
