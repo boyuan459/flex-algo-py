@@ -47,6 +47,9 @@ class PriorityQueue:
             self.__swap(idx, current)
             idx = current
 
+    def is_empty(self):
+        return self.size() == 0
+
     def pop(self):
         idx = self.size() - 1
         self.__swap(0, idx)
@@ -76,5 +79,12 @@ if __name__ == '__main__':
 
     val = queue.pop()
     print(val)
+    val2 = queue.pop()
+    print(val2)
+    val3 = queue.pop()
+    print(val3)
+    val4 = queue.pop()
+    print(val4)
 
     print(queue)
+    print(queue.is_empty())
